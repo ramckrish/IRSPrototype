@@ -1,0 +1,80 @@
+﻿@model MvcApplication1.Models.Incident
+
+@{
+    ViewBag.Title = "New Incident - Second Page";
+}
+
+<h2>New Incident - Page 2</h2>
+
+
+@using (Html.BeginForm("Post", "User", FormMethod.Post))
+{
+  <table>
+  <tr>
+  <td>
+  @Html.LabelFor(m => m.Category)
+  </td>
+  <td>
+                  <select id="Select2" name="D2" onchange="srcChange(this.value)">
+                 <option>---select category---</option>
+                <option>Patient Incident</option>
+                <option>Employee Incident</option>
+                <option>Physician Incident</option>
+                <option>Visitor Incident</option>
+                <option>Customer Service Incident</option>
+
+                </select>
+  </td>
+  <td>
+  @Html.LabelFor(m => m.slc_target)
+  </td>
+  <td>
+    <select id="slc_target" name="D2" onchange="typeChange(this.value)">
+                 <option>---select type---</option>
+
+                </select>
+  </td>
+  <td>
+  @Html.LabelFor(m => m.SubType)
+  </td>
+  <td>
+    <select id="SubType" name="D2">
+                 <option>---select sub type---</option>
+
+                </select>
+
+  </td>
+  </tr>
+  <tr>
+  <td>
+  
+  @Html.LabelFor(m => m.AddlInfo)
+  </td>
+  <td>
+  @Html.TextAreaFor(m => m.AddlInfo)
+  </td>
+  </tr>
+  </table>
+      <div>
+        <fieldset>
+            <legend>Transfer Related questions</legend>
+
+            <div class="editor-label">
+                @Html.CheckBoxFor(m => m.chkTransfer)
+                @Html.LabelFor(m => m.chkTransfer)
+            </div>
+            <div class="editor-label">
+                @Html.CheckBoxFor(m => m.chkEmergency)
+                @Html.LabelFor(m => m.chkEmergency)
+            </div>
+        </fieldset>
+    </div>
+    <p>
+        <input type="submit" value="Save" name="btnName" />   
+    <input type="submit" value="Next" name="btnName"  />
+    <input type="submit" value="Submit" name="btnName" />
+    <input type="submit" value="Cancel" name="btnName" />
+    </p>
+        
+}
+       

@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "searchincident";
+}
+
+<h2>Search Incident</h2>
+@using (Html.BeginForm("SearchResult", "User", FormMethod.Post, new { id = "searchForm" }))
+{
+    <table style="width: auto; border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td class="style6">
+                Facility</td>
+            <td class="style2">
+                <select id="Select1" name="D1">
+                    <option> All </option>
+                    <option> ABC Center@Atlanta </option>
+                    <option> XYZ Center@Louisville </option>
+                   
+                </select></td>
+            <td align="left" class="style5">
+            </td>
+            <td class="style4">
+                </td>
+        </tr>
+        <tr>
+            <td class="style6">
+                Date Range : From Date</td>
+            <td class="style2">
+                <input class="date" id="Text1" type="text" /></td>
+            <td align="left" class="style5">
+                To Date</td>
+            <td class="style4">
+                <input id="Text2" type="text" /></td>
+        </tr>
+        <tr>
+            <td class="style6">
+                Incident Category</td>
+            <td class="style2">
+                <select id="Select2" name="D2" onchange="srcChange(this.value)">
+                    <option> All </option>
+                  <option>Patient Incident</option>
+                <option>Employee Incident</option>
+                <option>Physician Incident</option>
+                <option>Visitor Incident</option>
+                <option>Customer Service Incident</option>
+
+                </select></td>
+            <td align="left" class="style5">
+                Incident Type</td>
+            <td class="style4">
+            <select id="slc_target" name="D1">
+            <option> All </option>
+            </select></td>
+        </tr>
+        <tr>
+            <td class="style6">
+                Incident Status</td>
+            <td class="style2">
+                <select id="Select6" name="D6">
+                <option> All </option>
+                 <option>New</option>
+                <option>Open</option>
+                <option>Submitted</option>
+                <option>In-progress</option>
+                <option>Closed</option>
+               </select></td>
+            <td align="left" class="style5">
+                </td>
+            <td class="style4">
+                </td>
+        </tr>
+        <tr>
+            <td class="style6">
+                                <input id="Button1" type="submit" value="Search" /></td>
+            <td class="style2">
+                </td>
+            <td align="left" class="style5">
+                </td>
+            <td class="style4">
+                </td>
+        </tr>
+    </table>
+}

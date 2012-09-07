@@ -1,0 +1,81 @@
+﻿@model MvcApplication1.Models.Incident
+@{
+    ViewBag.Title = "Close Incident";
+}
+
+<h2>Close Incident</h2>
+
+
+@using (Html.BeginForm("Post","User",FormMethod.Post))
+{
+  <table>
+  <tr>
+      <td style="font-weight: bold">
+  @Html.LabelFor(m => m.IncidentNumber)
+  </td>
+  <td>
+    @Html.DisplayFor(m => m.IncidentNumber)
+  </td>
+    <td style="font-weight: bold">
+  @Html.LabelFor(m => m.IncidentDate)
+  </td>
+  <td>
+    @Html.DisplayFor(m => m.IncidentDate)
+  </td>
+     <td style="font-weight: bold">
+  @Html.LabelFor(m => m.ReportDate)
+  </td>
+  <td>
+      @Html.DisplayFor(m => m.ReportDate)
+  </td>
+  </tr>
+  <tr>
+      <td style="font-weight: bold">
+  @Html.LabelFor(m => m.Category)
+  </td>
+  <td>
+    @Html.DisplayFor(m => m.Category)
+  </td>
+         <td style="font-weight: bold">
+  @Html.LabelFor(m => m.slc_target)
+  </td>
+  <td>
+      @Html.DisplayFor(m => m.slc_target)
+  </td>
+           <td style="font-weight: bold">
+  @Html.LabelFor(m => m.SubType)
+  </td>
+  <td>
+      @Html.DisplayFor(m => m.SubType)
+  </td>
+
+  </tr>
+  <tr>
+ <td style="font-weight: bold">
+  @Html.LabelFor(m => m.correctiveAction)
+  </td>  
+  </tr>
+  <tr>
+  <td>
+  @Html.TextAreaFor(m => m.correctiveAction)
+  </td>  
+  </tr>
+  <tr>
+  <td style="font-weight: bold">
+  @Html.LabelFor(m => m.preventiveAction)
+  </td>  
+  </tr>
+  <tr>
+  <td>
+  @Html.TextAreaFor(m => m.preventiveAction)
+  </td>  
+  </tr>
+
+  <tr>
+  <td>
+    <input type="submit" value="Close" name="btnName" />   
+    <input type="submit" value="Cancel" name="btnName" />
+</td>
+  </tr>
+  </table>
+}

@@ -1,0 +1,165 @@
+﻿@model MvcApplication1.Models.Incident
+
+@{
+    ViewBag.Title = "Edit Incident";
+}
+
+<h2>Edit Incident - Incident #107888</h2>
+
+
+@using (Html.BeginForm("Post","User",FormMethod.Post))
+{
+  <table>
+  <tr>
+  <td>
+  @Html.LabelFor(m => m.IncidentDate)
+  </td>
+  <td>
+  @Html.TextBox("IncidentDate", Model.IncidentDate.ToString("dd/MM/yyyy"), new { Class = "date hasDatePicker", id = "IncidentDate" })
+
+  </td>
+  <td>
+  @Html.LabelFor(m => m.Time)
+  </td>
+  <td>
+  @Html.TextBoxFor(m => m.Time)
+  </td>
+  </tr>
+  <tr>
+  <td>
+  @Html.LabelFor(m => m.ReportName)
+  </td>
+  <td>
+  @Html.DropDownListFor(model => model.ReportName, new SelectList(new[] { "Select", "Employee", "Physician" }))
+  </td>
+  <td>
+  @Html.LabelFor(m => m.ReportDate)
+  </td>
+  <td>
+  @Html.TextBox("ReportDate", Model.IncidentDate.ToString("dd/MM/yyyy"), new { Class = "date hasDatePicker", id = "ReportDate" })
+  </td>
+  </tr>
+      <tr>
+  <td>
+  @Html.LabelFor(m => m.PersonName);
+  </td>
+  <td>
+  @Html.TextBoxFor(m => m.PersonName)
+  </td>
+  </tr>
+  <tr>
+  <td>
+  @Html.LabelFor(m => m.Location)
+  </td>
+  <td>
+  @Html.DropDownListFor(model => model.Location, new SelectList(new[] { "Select", "Operating Room", "Pre‐op", "PACU", "Step‐down", "Bathroom", "Lobby", "Business Office", "Lounge", "Dressing Room", "Parking Lot", "Other" }))
+  </td>
+  </tr>
+  <tr>
+  <td>
+  @Html.LabelFor(m => m.ReportDesc)
+  </td>
+  <td>
+  @Html.TextBoxFor(m => m.ReportDesc)
+  </td>
+  </tr>
+  <tr>
+  <td>
+  @Html.LabelFor(m => m.Person1)
+  </td>
+  <td>
+  @Html.TextBoxFor(m => m.Person1)
+  </td>
+  <td>
+  @Html.LabelFor(m => m.Person2)
+  </td>
+  <td>
+  @Html.TextBoxFor(m => m.Person2)
+  </td>
+  </tr>
+
+  <tr>
+  <td>
+  @Html.LabelFor(m => m.Person3)
+  </td>
+  <td>
+  @Html.TextBoxFor(m => m.Person3)
+  </td>
+  <td>
+  @Html.LabelFor(m => m.Person4)
+  </td>
+  <td>
+  @Html.TextBoxFor(m => m.Person4)
+  </td>
+  </tr>
+    <tr>
+  <td>
+  @Html.LabelFor(m => m.Person5)
+  </td>
+  <td>
+  @Html.TextBoxFor(m => m.Person5)
+  </td>
+  <td>
+  @Html.LabelFor(m => m.Person6)
+  </td>
+  <td>
+  @Html.TextBoxFor(m => m.Person6)
+  </td>
+  </tr>
+<tr>
+  <td>
+  @Html.LabelFor(m => m.Category)
+  </td>
+  <td>
+                  <select id="Select2" name="D2" onchange="srcChange(this.value)">
+                 <option>---select category---</option>
+                <option>Patient Incident</option>
+                <option>Employee Incident</option>
+                <option>Physician Incident</option>
+                <option>Visitor Incident</option>
+                <option>Customer Service Incident</option>
+
+                </select>
+  </td>
+  <td>
+  @Html.LabelFor(m => m.slc_target)
+  </td>
+  <td>
+    <select id="slc_target" name="D2" onchange="typeChange(this.value)">
+                 <option>---select type---</option>
+
+                </select>
+  </td>
+  <td>
+  @Html.LabelFor(m => m.SubType)
+  </td>
+  <td>
+    <select id="SubType" name="D2">
+                 <option>---select sub type---</option>
+
+                </select>
+
+  </td>
+  </tr>
+  <tr>
+  <td>
+  
+  @Html.LabelFor(m => m.AddlInfo)
+  </td>
+  <td>
+  @Html.TextAreaFor(m => m.AddlInfo)
+  </td>
+  </tr>
+
+  <tr>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td>
+    <input type="submit" value="Save" name="btnName" />   
+    <input type="submit" value="Cancel" name="btnName" />
+</td>
+  </tr>
+  </table>
+}
+       
