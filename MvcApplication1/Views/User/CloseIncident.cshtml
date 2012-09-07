@@ -48,27 +48,53 @@
   <td>
       @Html.DisplayFor(m => m.SubType)
   </td>
-
+    </tr>
+    <tr></tr>
+  <tr>
+ <td style="font-weight: bold" colspan = "5">
+  @Html.LabelFor(m => m.RCA)
+  </td>  
   </tr>
   <tr>
- <td style="font-weight: bold">
+  <td colspan = "5">
+  @Html.TextArea("correctiveAction", Model.RCA,
+     new { rows = 10, cols = 70, @class = "celltext2" })
+  
+  </td>  
+  <td>
+  <input type="submit" value="Upload Document" name="btnName" />   
+  </td>
+  </tr>
+
+  <tr>
+ <td style="font-weight: bold" colspan = "6">
   @Html.LabelFor(m => m.correctiveAction)
   </td>  
   </tr>
   <tr>
-  <td>
-  @Html.TextAreaFor(m => m.correctiveAction)
+  <td colspan = "5">
+  @Html.TextArea("correctiveAction", Model.correctiveAction,
+     new { rows = 10, cols = 70, @class = "celltext2" })
+  
   </td>  
+    <td>
+  <input type="submit" value="Upload Document" name="btnName" />   
+  </td>
   </tr>
   <tr>
-  <td style="font-weight: bold">
+  <td style="font-weight: bold" colspan = "5">
   @Html.LabelFor(m => m.preventiveAction)
   </td>  
+
   </tr>
   <tr>
-  <td>
-  @Html.TextAreaFor(m => m.preventiveAction)
+  <td colspan = "5">
+  @Html.TextArea("preventiveAction", Model.preventiveAction,
+     new { rows = 10, cols = 70, @class = "celltext3" })
   </td>  
+    <td>
+  <input type="submit" value="Upload Document" name="btnName" />   
+  </td>
   </tr>
 
   <tr>

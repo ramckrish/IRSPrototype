@@ -50,8 +50,9 @@
   
   @Html.LabelFor(m => m.AddlInfo)
   </td>
-  <td>
-  @Html.TextAreaFor(m => m.AddlInfo)
+  <td colspan = "2">
+    @Html.TextArea("AddlInfo", "AddlInfo",
+     new { rows = 5, cols = 50, @class = "celltext21" })
   </td>
   </tr>
   </table>

@@ -71,6 +71,9 @@ namespace MvcApplication1.Models
         [Display(Name = "Preventive Action")]
         public string preventiveAction { get; set; }
 
+        [Display(Name = "Root Cause Analysis")]
+        public string RCA { get; set; }
+
         [Display(Name = "Closed Date")]
         public DateTime ClosedDate { get; set; }
 
