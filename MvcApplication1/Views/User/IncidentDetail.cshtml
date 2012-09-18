@@ -3,16 +3,7 @@
 @{
     ViewBag.Title = "Edit Incident";
 }
-  <script type="text/javascript">
-      $(function () {
-          $(".date1").datepicker();
-      });
-  </script>
-    <script type="text/javascript">
-        $(function () {
-            $(".time1").timepicker();
-        });
-  </script>
+
 
 <h2>Edit Incident - Incident #107888</h2>
 
@@ -25,14 +16,14 @@
   @Html.LabelFor(m => m.IncidentDate)
   </td>
   <td>
-  @Html.TextBox("IncidentDate", Model.IncidentDate.ToString("MM/dd/yyyy"), new { Class = "date1", id = "IncidentDate" })
+  @Html.TextBox("IncidentDate", Model.IncidentDate.ToString("MM/dd/yyyy"), new { Class = "date1", id = "date1id" })
 
   </td>
   <td>
   @Html.LabelFor(m => m.Time)
   </td>
   <td>
-  @Html.TextBox("IncidentTime", Model.Time, new { Class = "time1", id = "IncidentTime"})
+  @Html.TextBox("IncidentTime", Model.Time, new { Class = "time1", id = "time1id" })
   </td>
   </tr>
   <tr>
@@ -46,7 +37,7 @@
   @Html.LabelFor(m => m.ReportDate)
   </td>
   <td>
-  @Html.TextBox("ReportDate", Model.IncidentDate.ToString("MM/dd/yyyy"), new { Class = "date1", id = "ReportDate" })
+  @Html.TextBox("ReportDate", Model.IncidentDate.ToString("MM/dd/yyyy"), new { Class = "date1", id = "date1id" })
   </td>
   </tr>
       <tr>
