@@ -11,7 +11,6 @@ namespace MvcApplication1.Models
         [Display(Name = "Incident Number")]
         public string IncidentNumber { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         [Display(Name = "Incident Date")]
         public DateTime IncidentDate { get; set; }

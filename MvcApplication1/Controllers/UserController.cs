@@ -27,7 +27,7 @@ namespace MvcApplication1.Controllers
             Incident model = new Incident();
             DateTime dt = new DateTime(2010, 12, 15);
             model.IncidentDate = dt;
-            model.Time = "10.00 AM";
+            model.Time = "10:00";
             model.ReportName = "Employee";
             model.PersonName = "Andrews Lee";
             model.Location = "Operating Room";
@@ -60,6 +60,15 @@ namespace MvcApplication1.Controllers
             model.IncidentDate = dt;
             return View(model);
         }
+        public ActionResult NewFacility()
+        {
+            return View();
+        }
+        public ActionResult ViewFacility()
+        {
+            return View();
+        }
+
         public ActionResult EditIncident()
         {
             return View();
@@ -70,6 +79,10 @@ namespace MvcApplication1.Controllers
             return View();
         }
         public ActionResult FacilityAdmin()
+        {
+            return View();
+        }
+        public ActionResult ListFacility()
         {
             return View();
         }
@@ -151,7 +164,7 @@ namespace MvcApplication1.Controllers
             model.IncidentDate = dt;
             model.ReportDate = dt;
             model.IncidentNumber = "107888";
-            model.Time = "10.00 AM";
+            model.Time = "10:00";
             model.ReportName = "Employee";
             model.PersonName = "Andrews Lee";
             model.Location = "Operating Room";

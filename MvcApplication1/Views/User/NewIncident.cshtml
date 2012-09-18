@@ -3,6 +3,16 @@
 @{
     ViewBag.Title = "New Incident";
 }
+  <script type="text/javascript">
+      $(function () {
+          $(".date1").datepicker();
+      });
+  </script>
+    <script type="text/javascript">
+        $(function () {
+            $(".time1").timepicker();
+        });
+  </script>
 
 <h2>New Incident</h2>
 
@@ -17,13 +27,13 @@
   </td>
   <td>
   
-  @Html.TextBox("IncidentDate", Model.IncidentDate.ToString("dd/MM/yyyy"), new { Class = "date hasDatePicker", id = "IncidentDate" })
+  @Html.TextBox("IncidentDate", Model.IncidentDate.ToString("MM/dd/yyyy"), new { Class = "date1", id = "IncidentDate" })
   </td>
   <td>
   @Html.LabelFor(m => m.Time)
   </td>
   <td>
-  @Html.TextBoxFor(m => m.Time)
+  @Html.TextBox("IncidentTime", Model.Time, new { Class = "time1", id = "IncidentTime" })
   </td>
   </tr>
   <tr>
@@ -37,12 +47,12 @@
   @Html.LabelFor(m => m.ReportDate)
   </td>
   <td>  
-  @Html.TextBox("ReportDate", Model.IncidentDate.ToString("dd/MM/yyyy"), new { Class = "date hasDatePicker", id = "ReportDate" })
+  @Html.TextBox("ReportDate", Model.IncidentDate.ToString("MM/dd/yyyy"), new { Class = "date1", id = "ReportDate" })
   </td>
   </tr>
     <tr>
   <td>
-  @Html.LabelFor(m => m.PersonName);
+  @Html.LabelFor(m => m.PersonName)
   </td>
   <td>
   @Html.TextBoxFor(m => m.PersonName)
@@ -60,16 +70,8 @@
   <td>
   @Html.LabelFor(m => m.ReportDesc)
   </td>
-  <td>
-  @Html.TextBoxFor(m => m.ReportDesc)
-  </td>
-  </tr>
-  <tr>
-  <td>
-  @Html.LabelFor(m => m.ReportDesc)
-  </td>
-  <td>
-  @Html.TextAreaFor(m => m.ReportDesc)
+  <td colspan="3">
+  @Html.TextAreaFor(m => m.ReportDesc, new { rows = 5, cols = 60, @class = "celltext21" })
   </td>
   </tr>
   <tr>

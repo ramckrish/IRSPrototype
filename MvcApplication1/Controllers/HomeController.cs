@@ -32,5 +32,21 @@ namespace MvcApplication1.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Post(string btnName)
+        {
+            switch (btnName)
+            {
+                case "Save":
+                    return  View("ListFacility");
+                case "Cancel":
+                    return View("ListFacility");
+
+                default:
+                    return View();
+
+            }
+        }
+
     }
 }
