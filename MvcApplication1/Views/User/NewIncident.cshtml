@@ -17,8 +17,9 @@
   </td>
   <td>
   
-  @Html.TextBox("IncidentDate", Model.IncidentDate.ToString("MM/dd/yyyy"), new { Class = "date1", id = "date1id" })
+   @Html.TextBox("IncidentDate", Model.IncidentDate.ToString("MM/dd/yyyy"), new { Class = "pickDate", id = "IncidentDate" })
   </td>
+
   <td>
   @Html.LabelFor(m => m.Time)
   </td>
@@ -37,7 +38,7 @@
   @Html.LabelFor(m => m.ReportDate)
   </td>
   <td>  
-  @Html.TextBox("ReportDate", Model.IncidentDate.ToString("MM/dd/yyyy"), new { Class = "date1", id = "date1id" })
+  @Html.TextBox("ReportDate", Model.IncidentDate.ToString("MM/dd/yyyy"), new { Class = "pickDate", id = "ReportDate" })
   </td>
   </tr>
     <tr>
