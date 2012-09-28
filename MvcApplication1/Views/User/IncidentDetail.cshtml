@@ -12,41 +12,39 @@
 {
   <table>
   <tr>
-  <td>
-  @Html.LabelFor(m => m.IncidentDate)
+    <td>
+  @Html.LabelFor(m => m.ReportName)
   </td>
   <td>
-    @Html.TextBox("IncidentDate", Model.IncidentDate.ToString("MM/dd/yyyy"), new { Class = "pickDate", id = "IncidentDate" })
+  <strong>@User.Identity.Name</strong>  
+  </td>
 
-  </td>
   <td>
-  @Html.LabelFor(m => m.Time)
+  @Html.LabelFor(m => m.ReportDate)
   </td>
-  <td>
-  @Html.TextBox("IncidentTime", Model.Time, new { Class = "time1", id = "time1id" })
+  <td>  
+  @Html.TextBox("ReportDate", Model.IncidentDate.ToString("MM/dd/yyyy"), new { Class = "pickDate", id = "ReportDate" })
   </td>
   </tr>
   <tr>
   <td>
-  @Html.LabelFor(m => m.ReportName)
+  @Html.LabelFor(m => m.IncidentDate)
+  
   </td>
   <td>
-  @Html.DropDownListFor(model => model.ReportName, new SelectList(new[] { "Select", "Employee", "Physician" }))
+  
+   @Html.TextBox("IncidentDate", Model.IncidentDate.ToString("MM/dd/yyyy"), new { Class = "pickDate", id = "IncidentDate" })
+  </td>
+
+  <td>
+  @Html.LabelFor(m => m.Time)
   </td>
   <td>
-  @Html.LabelFor(m => m.ReportDate)
-  </td>
-  <td>
-  @Html.TextBox("ReportDate", Model.IncidentDate.ToString("MM/dd/yyyy"), new { Class = "pickDate", id = "ReportDate" })
+  @Html.TextBox("IncidentTime", Model.Time, new { Class = "TimePick", id = "pickTime" })
   </td>
   </tr>
-      <tr>
-  <td>
-  @Html.LabelFor(m => m.PersonName)
-  </td>
-  <td>
-  @Html.TextBoxFor(m => m.PersonName)
-  </td>
+  
+    <tr>
   </tr>
   <tr>
   <td>
@@ -107,21 +105,94 @@
   @Html.TextBoxFor(m => m.Person6)
   </td>
   </tr>
-<tr>
+  <tr>
+  <td>
+  @Html.LabelFor(m => m.WitnessCheck)
+  </td>
+  <td>
+  @Html.CheckBoxFor(m => m.WitnessCheck)
+  </td> 
+  </tr>
+  <tr>
+    <td>
+  @Html.LabelFor(m => m.WitnessName)
+  </td>
+  <td>
+  @Html.TextBoxFor(m => m.WitnessName)
+  </td> 
+    <td>
+  @Html.TextBoxFor(m => m.WitnessName)
+  </td> 
+    <td>
+  @Html.TextBoxFor(m => m.WitnessName)
+  </td> 
+  </tr>
+  <tr>
+    <td>
+  @Html.LabelFor(m => m.WitnessAddress)
+  </td>
+
+<td>
+  @Html.TextAreaFor(m => m.WitnessAddress, new { rows = 3, cols = 20, @class = "celltext22" })
+  </td>
+<td>
+  @Html.TextAreaFor(m => m.WitnessAddress, new { rows = 3, cols = 20, @class = "celltext22" })
+  </td>
+<td>
+  @Html.TextAreaFor(m => m.WitnessAddress, new { rows = 3, cols = 20, @class = "celltext22" })
+  </td>
+  </tr>
+  </table>
+    <div>
+        <fieldset class="fieldset-auto-width">
+            <legend>Communication</legend>
+    <table style="border:none;">
+    <tr> 
+    <td> Who has been notified &nbsp &nbsp &nbsp </td>
+    <td> Name</td>
+    <td> Date</td>
+    <td> Time </td>
+    </tr>
+    <tr> 
+    <td> of the incident</td>
+    <td> </td>
+    <td> </td>
+    <td>  </td>
+    </tr>
+    <tr>
+    <td> @Html.DropDownListFor(model => model.PersonComm, new SelectList(new[] { "Select", "Physician", "Family", "Supervisor" }))</td>
+    <td> @Html.TextBoxFor(m => m.WitnessName)</td>
+    <td> @Html.TextBox("CommDate1", Model.commDate.ToString("MM/dd/yyyy"), new { Class = "pickDate", id = "CommDate1" })</td>
+    <td> @Html.TextBox("CommTime", Model.CommTime, new { Class = "TimePick", id = "pickTime1" })</td>
+    </tr>
+    <tr>
+    <td> @Html.DropDownListFor(model => model.PersonComm, new SelectList(new[] { "Select", "Physician", "Family", "Supervisor" }))</td>
+    <td> @Html.TextBoxFor(m => m.WitnessName)</td>
+    <td> @Html.TextBox("CommDate2", Model.commDate.ToString("MM/dd/yyyy"), new { Class = "pickDate", id = "CommDate2" })</td>
+    <td> @Html.TextBox("CommTime", Model.CommTime, new { Class = "TimePick", id = "pickTime1" })</td>
+    </tr>
+    <tr>
+    <td> @Html.DropDownListFor(model => model.PersonComm, new SelectList(new[] { "Select", "Physician", "Family", "Supervisor" }))</td>
+    <td> @Html.TextBoxFor(m => m.WitnessName)</td>
+    <td> @Html.TextBox("CommDate3", Model.commDate.ToString("MM/dd/yyyy"), new { Class = "pickDate", id = "CommDate3" })</td>
+    <td> @Html.TextBox("CommTime", Model.CommTime, new { Class = "TimePick", id = "pickTime1" })</td>
+    </tr>
+
+    </table>
+    </fieldset>
+    </div>
+    <table>
+  <tr>
   <td>
   @Html.LabelFor(m => m.Category)
   </td>
   <td>
-                  <select id="Select2" name="D2" onchange="srcChange(this.value)">
-                 <option>---select category---</option>
-                <option selected = "selected">Patient Incident</option>
-                <option>Employee Incident</option>
-                <option>Physician Incident</option>
-                <option>Visitor Incident</option>
-                <option>Customer Service Incident</option>
-
-                </select>
+@Html.DropDownListFor(model => model.Category, new SelectList(new[] { "Select", "Patient Incident", "Employee Incident", "Physician Incident", "Visitor Incident", "Customer Service Incident" }), new { @onchange = "srcChange(this.value);" })
   </td>
+  <td>
+  </td>
+  </tr>
+  <tr>
   <td>
   @Html.LabelFor(m => m.slc_target)
   </td>
@@ -142,25 +213,47 @@
 
   </td>
   </tr>
+  
+  <tr>
+  <td>
+    @Html.LabelFor(m => m.PatientID)
+  </td>
+  <td>
+  @Html.TextBoxFor(m => m.PatientID)
+  </td>
+  <td>
+    @Html.LabelFor(m => m.PatientName)
+  </td>
+    <td>
+  @Html.TextBoxFor(m => m.PatientName)
+  </td>
+  </tr>
   <tr>
   <td>
   
   @Html.LabelFor(m => m.AddlInfo)
   </td>
-  <td colspan="3">
-  @Html.TextAreaFor(m => m.AddlInfo, new { rows = 5, cols = 60, @class = "celltext24" })
+  <td colspan = "2">
+    @Html.TextArea("AddlInfo", "AddlInfo",
+     new { rows = 5, cols = 50, @class = "celltext21" })
   </td>
   </tr>
-
-  <tr>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td>
-    <input type="submit" value="Save" name="btnName" />   
-    <input type="submit" value="Cancel" name="btnName" />
-</td>
-  </tr>
   </table>
+      <div>
+        <fieldset>
+            <legend>Transfer Related questions</legend>
+
+            <div class="editor-label">
+                @Html.CheckBoxFor(m => m.chkTransfer)
+                @Html.LabelFor(m => m.chkTransfer)
+            </div>
+            <div class="editor-label">
+                @Html.CheckBoxFor(m => m.chkEmergency)
+                @Html.LabelFor(m => m.chkEmergency)
+            </div>
+        </fieldset>
+    </div>
+<input type="submit" value="Save" name="btnName" />   
+<input type="submit" value="Cancel" name="btnName" />    
 }
        

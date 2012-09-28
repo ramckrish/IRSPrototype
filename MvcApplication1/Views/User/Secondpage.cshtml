@@ -26,6 +26,10 @@
                 </select>
   </td>
   <td>
+  </td>
+  </tr>
+  <tr>
+  <td>
   @Html.LabelFor(m => m.slc_target)
   </td>
   <td>
@@ -43,6 +47,21 @@
 
                 </select>
 
+  </td>
+  </tr>
+  
+  <tr>
+  <td>
+    @Html.LabelFor(m => m.PatientID)
+  </td>
+  <td>
+  @Html.TextBoxFor(m => m.PatientID)
+  </td>
+  <td>
+    @Html.LabelFor(m => m.PatientName)
+  </td>
+    <td>
+  @Html.TextBoxFor(m => m.PatientName)
   </td>
   </tr>
   <tr>

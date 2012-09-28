@@ -39,11 +39,12 @@ namespace MvcApplication1.Controllers
             model.Person4 = "Person 4 Name";
             model.Person5 = "Person 5 Name";
             model.Person6 = "Person 6 Name";
-            model.Category = "Patient Incident";
+            model.Category = "Select";
             model.slc_target = "Unexpected Complication";
             model.SubType = "Hemorrhage/Excessive Bleeding";
             model.chkTransfer = true;
             model.chkEmergency = true;
+            model.commDate = dt;
             
             return View(model);
             //return View();
@@ -58,6 +59,8 @@ namespace MvcApplication1.Controllers
             DateTime dt = DateTime.Now;
             model.ReportDate = dt;
             model.IncidentDate = dt;
+            model.commDate = dt;
+         
             return View(model);
         }
         public ActionResult NewFacility()
