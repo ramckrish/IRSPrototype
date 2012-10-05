@@ -85,7 +85,7 @@ namespace MvcApplication1.Models
 
         public bool chkEmergency { get; set; }
 
-        [Display(Name = "Corrective Action")]
+        [Display(Name = "Action Taken")]
         public string correctiveAction { get; set; }
 
         [Display(Name = "Preventive Action")]
@@ -97,10 +97,46 @@ namespace MvcApplication1.Models
         [Display(Name = "Closed Date")]
         public DateTime ClosedDate { get; set; }
 
-        [Display(Name = "Patient Name")]
+        [Display(Name = "Involved Person Name")]
         public string PatientName { get; set; }
-        [Display(Name = "Patient ID")]
+        [Display(Name = "Involved Person ID")]
         public string PatientID { get; set; }
+
+        [Display(Name = "Condition Prior to Event")]
+        public string Condition { get; set; }
+
+        [Display(Name = "Severity of Event")]
+        public string Severity { get; set; }
+
+        [Display(Name = "Disposition")]
+        public string Disposition { get; set; }
+
+        [Display(Name = "Was Chart peer reviewed?")]
+        public bool bChart { get; set; }
+
+        [Display(Name = "Were any trends noted?")]
+        public bool bTrends { get; set; }
+
+        [Display(Name = "If Yes, explain?")]
+        public string TrendsDesc { get; set; }
+
+        [Display(Name = "Was standard of care met?")]
+        public bool bCare { get; set; }
+
+        [Display(Name = "If No, explain?")]
+        public string CareDesc { get; set; }
+
+        [Display(Name = "Was there an oppurtunity for improvement?")]
+        public bool bOppurtunity { get; set; }
+
+        [Display(Name = "If Yes, explain?")]
+        public string OppDesc { get; set; }
+
+        [Display(Name = "Recommendation")]
+        public string Recommendation { get; set; }
+
+        [Display(Name = "Comments/Follow-up/Outcome")]
+        public string Outcome { get; set; }
 
     }
 

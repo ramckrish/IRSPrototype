@@ -1,6 +1,6 @@
 ﻿@model MvcApplication1.Models.Incident
 @{
-    ViewBag.Title = "Close Incident";
+    ViewBag.Title = "Follow-up";
 }
 
 <h2>Close Incident</h2>
@@ -52,18 +52,14 @@
     <tr></tr>
   <tr>
  <td style="font-weight: bold" colspan = "5">
-  @Html.LabelFor(m => m.RCA)
+  @Html.LabelFor(m => m.ReportDesc)
   </td>  
   </tr>
   <tr>
   <td colspan = "5">
-  @Html.TextArea("correctiveAction", Model.RCA,
-     new { rows = 10, cols = 70, @class = "celltext2" })
+  @Html.DisplayFor(m => m.ReportDesc)
   
   </td>  
-  <td>
-  <input type="submit" value="Upload Document" name="btnName" />   
-  </td>
   </tr>
 
   <tr>
@@ -81,25 +77,99 @@
   <input type="submit" value="Upload Document" name="btnName" />   
   </td>
   </tr>
-  <tr>
-  <td style="font-weight: bold" colspan = "5">
-  @Html.LabelFor(m => m.preventiveAction)
-  </td>  
-
+    <tr>
+ <td colspan = "5" style="font-weight: bold">
+  @Html.LabelFor(m => m.bTrends)
+  @Html.RadioButtonFor(model => model.bTrends, true) Yes
+  @Html.RadioButtonFor(model => model.bTrends, false) No
+  </td>
+ <td style="font-weight: bold">
+  @Html.LabelFor(m => m.bChart)
+  @Html.RadioButtonFor(model => model.bChart, true) Yes
+  @Html.RadioButtonFor(model => model.bChart, false) No
+  </td>
+ 
   </tr>
   <tr>
-  <td colspan = "5">
-  @Html.TextArea("preventiveAction", Model.preventiveAction,
-     new { rows = 10, cols = 70, @class = "celltext3" })
-  </td>  
-    <td>
-  <input type="submit" value="Upload Document" name="btnName" />   
+ <td style="font-weight: bold" colspan = "6">
+  @Html.LabelFor(m => m.TrendsDesc)
   </td>
   </tr>
+  <tr>
+    <td colspan = "5">
+  @Html.TextArea("correctiveAction", Model.TrendsDesc,
+     new { rows = 10, cols = 70, @class = "celltext2" })
+
+  </td>
+
+  </tr>
+
+    <tr>
+ <td colspan = "5" style="font-weight: bold">
+  @Html.LabelFor(m => m.bCare)
+  @Html.RadioButtonFor(model => model.bCare, true) Yes
+  @Html.RadioButtonFor(model => model.bCare, false) No
+  </td>
+ <td style="font-weight: bold">
+  @Html.LabelFor(m => m.bOppurtunity)
+  @Html.RadioButtonFor(model => model.bOppurtunity, true) Yes
+  @Html.RadioButtonFor(model => model.bOppurtunity, false) No
+  </td>
+ 
+  </tr>
+  <tr>
+ <td style="font-weight: bold" colspan = "5">
+  @Html.LabelFor(m => m.CareDesc)
+  </td>
+ <td style="font-weight: bold">
+  @Html.LabelFor(m => m.OppDesc)
+  </td>
+
+  </tr>
+  <tr>
+    <td colspan = "5">
+  @Html.TextArea("CareDesc", Model.CareDesc,
+     new { rows = 10, cols = 70, @class = "celltext2" })
+
+  </td>
+    <td>
+  @Html.TextArea("OppDesc", Model.OppDesc,
+     new { rows = 10, cols = 70, @class = "celltext2" })
+
+  </td>
+
+  </tr>
+  <tr>
+ <td style="font-weight: bold" colspan = "6">
+  @Html.LabelFor(m => m.Recommendation)
+  </td>
+  </tr>
+  <tr>
+    <td colspan = "5">
+  @Html.TextArea("Recommendation", Model.Recommendation,
+     new { rows = 10, cols = 70, @class = "celltext2" })
+
+  </td>
+
+  </tr>
+  <tr>
+ <td style="font-weight: bold" colspan = "6">
+  @Html.LabelFor(m => m.Outcome)
+  </td>
+  </tr>
+  <tr>
+    <td colspan = "5">
+  @Html.TextArea("Outcome", Model.Outcome,
+     new { rows = 10, cols = 70, @class = "celltext2" })
+
+  </td>
+
+  </tr>
 
   <tr>
-  <td>
+  <td colspan = "6">
     <input type="submit" value="Close" name="btnName" />   
+    <input type="submit" value="Save" name="btnName" />   
     <input type="submit" value="Cancel" name="btnName" />
 </td>
   </tr>

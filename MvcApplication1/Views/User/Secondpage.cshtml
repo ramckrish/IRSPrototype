@@ -66,6 +66,67 @@
   </tr>
   <tr>
   <td>
+  @Html.LabelFor(m => m.Condition)
+  </td>
+  <td>
+                  <select id="Select21" name="D21" >
+                 <option>---Select Condition---</option>
+                <option>Alert/Oriented</option>
+                <option>Confused/Disoriented</option>
+                <option>Anesthetized</option>
+                <option>Sedated</option>
+                <option>Uncooperative</option>
+                <option>Unknown</option>
+                <option>Other</option>
+                </select>
+  </td>
+  <td>
+  </td>
+  </tr>
+  <tr>
+  <td>
+  @Html.LabelFor(m => m.Severity)
+  </td>
+  <td>
+                  <select id="Select22" name="D22" >
+                 <option>---Select Severity---</option>
+                <option>Death</option>
+                <option>Major/Severe</option>
+                <option>Moderate/Serious</option>
+                <option>Minor</option>
+                <option>No Apparent Injury</option>
+                <option>Not Applicable</option>
+                <option>Unknown</option>
+                </select>
+  </td>
+  <td>
+  </td>
+  </tr>
+  <tr>
+  <td>
+  @Html.LabelFor(m => m.Disposition)
+  </td>
+  <td>
+                  <select id="Select22" name="D22" >
+                 <option>---Select Disposition---</option>
+                <option>Transfer to Hospital</option>
+                <option>CPR</option>
+                <option>Examined & Treated</option>
+                <option>Follow-up Indicated</option>
+                <option>Medicated</option>
+                <option>Sutured</option>
+                <option>No Treatment Indicated</option>
+                <option>Not Applicable</option>
+                <option>Unknown</option>
+                <option>Other</option>
+                </select>
+  </td>
+  <td>
+  </td>
+  </tr>
+
+  <tr>
+  <td>
   
   @Html.LabelFor(m => m.AddlInfo)
   </td>

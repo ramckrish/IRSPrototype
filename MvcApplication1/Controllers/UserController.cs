@@ -184,6 +184,10 @@ namespace MvcApplication1.Controllers
             model.SubType = "Hemorrhage/Excessive Bleeding";
             model.chkTransfer = true;
             model.chkEmergency = true;
+            model.bTrends = false;
+            model.bChart = true;
+            model.bCare = true;
+
             DateTime dt1 = DateTime.Now;
             model.ClosedDate = dt1;
 
